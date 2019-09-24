@@ -13,7 +13,6 @@ public class Server implements Runnable {
 
     public Server(int port) {
         this.port = port;
-
     }
 
     private void readStream(Socket socket){
