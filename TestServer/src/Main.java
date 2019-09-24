@@ -5,6 +5,8 @@ public class Main {
         int port = 8000;
         String name;
 
+        int bonus;
+
 
 
         Server server = new Server(port);
