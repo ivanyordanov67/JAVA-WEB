@@ -4,6 +4,7 @@ public class Main {
 
         int port = 8000;
         String name;
+        int age;
 
         Server server = new Server(port);
 
