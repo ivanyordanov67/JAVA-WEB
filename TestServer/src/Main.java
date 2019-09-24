@@ -3,11 +3,6 @@ public class Main {
     public static void main(String[] args) {
 
         int port = 8000;
-        String name;
-
-        int bonus;
-
-
 
         Server server = new Server(port);
 
