@@ -15,19 +15,19 @@ public class Server implements Runnable {
         this.port = port;
     }
 
-    private void readStream(Socket socket){
+    private void readStream(Socket socket) {
 
         try {
             BufferedReader bufferedReader =
                     new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
             String line = bufferedReader.readLine();
-            while (line!=null){
-                if (line.isEmpty()){
+            while (line != null) {
+                if (line.isEmpty()) {
                     break;
                 }
                 System.out.println(line);
-                line=bufferedReader.readLine();
+                line = bufferedReader.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,7 +36,7 @@ public class Server implements Runnable {
 
     }
 
-    private byte[] getResponse(){
+    private byte[] getResponse() {
 
         StringBuilder builder = new StringBuilder();
 
@@ -53,27 +53,26 @@ public class Server implements Runnable {
     public void run() {
 
         try {
-            this.server=new ServerSocket(port);
+            this.server = new ServerSocket(port);
             System.out.println("Server is listening on:" + port);
 
             // Socket clientSocket = null;
 
 
-            while (true){
+            while (true) {
                 try {
 
-                    Socket  clientSocket = this.server.accept();
+                    Socket clientSocket = this.server.accept();
 
 
                     this.readStream(clientSocket);
-                    this.writeStream(clientSocket, this.getResponse());
+                    this.writeStream(clientSocket, getResponse());
                     //this.server.setSoTimeout(3000);
 
                     clientSocket.close();
 
 
-
-                }catch (SocketTimeoutException ignored){
+                } catch (SocketTimeoutException ignored) {
 
                 }
 
@@ -92,7 +91,6 @@ public class Server implements Runnable {
                     new DataOutputStream(clientSocket.getOutputStream());
 
             dataOutputStream.write(response);
-
 
 
         } catch (IOException e) {
