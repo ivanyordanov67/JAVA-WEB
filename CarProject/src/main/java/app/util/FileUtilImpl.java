@@ -3,7 +3,6 @@ package app.util;
 import java.io.*;
 
 public class FileUtilImpl implements FileUtil {
-
     public String readFile(String path) throws IOException {
         StringBuilder sb = new StringBuilder();
 
