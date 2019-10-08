@@ -6,6 +6,8 @@ public class Main {
 
         Server server = new Server(port);
 
+        System.out.println();
+
 
         server.run();
     }

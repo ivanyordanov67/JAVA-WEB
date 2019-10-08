@@ -47,6 +47,7 @@ public class Server implements Runnable {
                 .append("<h1>This is Javache server!</h1>").append(System.lineSeparator());
 
         return builder.toString().getBytes();
+
     }
 
     @Override
