@@ -1,11 +1,9 @@
 package app.config;
 
-import app.util.FileUtil;
-import app.util.FileUtilImpl;
+import app.util.FileUtilTest;
+import app.util.FileUtilTestImpl;
 import org.modelmapper.ModelMapper;
-
 import javax.enterprise.inject.Produces;
-
 public class ApplicationBeanConfiguration {
 
     @Produces
@@ -14,7 +12,7 @@ public class ApplicationBeanConfiguration {
     }
 
     @Produces
-    public FileUtil fileUtil(){
-        return new FileUtilImpl();
+    public FileUtilTest fileUtil(){
+        return new FileUtilTestImpl();
     }
 }

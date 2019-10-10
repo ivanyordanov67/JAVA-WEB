@@ -2,7 +2,7 @@ package app.util;
 
 import java.io.*;
 
-public class FileUtilImpl implements FileUtil {
+public class FileUtilTestImpl implements FileUtilTest {
     public String readFile(String path) throws IOException {
         StringBuilder sb = new StringBuilder();
 

@@ -3,11 +3,10 @@ package app.web.servlets;
 import app.domain.models.view.CarViewModel;
 import app.service.CarService;
 import app.service.CarServiceImpl;
-import app.util.FileUtil;
-import app.util.FileUtilImpl;
+import app.util.FileUtilTest;
+import app.util.FileUtilTestImpl;
 import org.modelmapper.ModelMapper;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,7 +32,7 @@ public class AllServlet extends HttpServlet {
 //        this.fileUtil = fileUtil;
 //    }
 
-    FileUtil fileUtil = new FileUtilImpl();
+    FileUtilTest fileUtil = new FileUtilTestImpl();
     ModelMapper modelMapper = new ModelMapper();
 
     @Override

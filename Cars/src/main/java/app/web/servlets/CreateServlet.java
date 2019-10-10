@@ -4,8 +4,8 @@ import app.domain.models.binding.CarCreateBindingModel;
 import app.domain.models.service.CarServiceModel;
 import app.service.CarService;
 import app.service.CarServiceImpl;
-import app.util.FileUtil;
-import app.util.FileUtilImpl;
+import app.util.FileUtilTest;
+import app.util.FileUtilTestImpl;
 import org.modelmapper.ModelMapper;
 
 import javax.servlet.ServletException;
@@ -19,7 +19,7 @@ import java.io.PrintWriter;
 @WebServlet("/create")
 public class CreateServlet extends HttpServlet {
 
-    FileUtil fileUtil = new FileUtilImpl();
+    FileUtilTest fileUtil = new FileUtilTestImpl();
  CarService carService = new CarServiceImpl();
    ModelMapper modelMapper = new ModelMapper();
 

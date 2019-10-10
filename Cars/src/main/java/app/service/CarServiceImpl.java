@@ -14,7 +14,10 @@ public class CarServiceImpl implements CarService {
 
     ModelMapper modelMapper = new ModelMapper();
 
-
+//    private final ModelMapper modelMapper;
+//
+//    public CarServiceImpl() {
+//    }
 
 
     @Override

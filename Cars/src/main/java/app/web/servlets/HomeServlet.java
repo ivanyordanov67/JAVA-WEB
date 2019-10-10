@@ -1,7 +1,7 @@
 package app.web.servlets;
 
-import app.util.FileUtil;
-import app.util.FileUtilImpl;
+import app.util.FileUtilTest;
+import app.util.FileUtilTestImpl;
 
 import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
@@ -9,18 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import java.io.*;
 
 @WebServlet("/")
 public class HomeServlet extends HttpServlet {
 
-    //    private final FileUtil fileUtil;
+
+//     private  FileUtilTest fileUtil;
 //
 //    @Inject
-//    public HomeServlet(FileUtil fileUtil) {
+//    public HomeServlet(FileUtilTestImpl fileUtil) {
 //        this.fileUtil = fileUtil;
 //    }
-    FileUtil fileUtil = new FileUtilImpl();
+
+   FileUtilTest fileUtil = new FileUtilTestImpl();
 
     private final static String FILE_PATH =
             "C:\\Users\\ivan\\Documents\\GitHub\\JAVA-WEB\\Cars\\src\\main\\webapp\\views\\home.html";
