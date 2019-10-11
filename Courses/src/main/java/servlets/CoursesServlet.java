@@ -6,6 +6,9 @@ import services.CoursesServiceImpl;
 import services.HtmlService;
 import services.HtmlServiceImpl;
 
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,16 +22,15 @@ public class CoursesServlet extends ViewHttpServlet {
 
 
 
-//   final CoursesService coursesService;
-//
-//   @Inject
-//    public CoursesServlet(CoursesService coursesService) {
-//        this.coursesService = coursesService;
-//    }
+   final CoursesService coursesService;
+   final HtmlService htmlService;
 
+   @Inject
+    public CoursesServlet(CoursesService coursesService, HtmlService htmlService) {
+        this.coursesService = coursesService;
+       this.htmlService = htmlService;
+   }
 
-    private CoursesService coursesService = new CoursesServiceImpl();
-    private HtmlService htmlService = new HtmlServiceImpl();
 
 
     @Override

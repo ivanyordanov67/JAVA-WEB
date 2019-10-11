@@ -1,33 +1,43 @@
 package services;
 
+import models.entities.Course;
 import models.serviceModels.CourseServiceModel;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CoursesServiceImpl implements CoursesService {
 
-    static List<CourseServiceModel> courses;
+    EntityManager entityManager =
+            Persistence.createEntityManagerFactory("courses_db")
+                    .createEntityManager();
 
-    static {
-        courses=new ArrayList<>();
-        CourseServiceModel model = new CourseServiceModel();
-        model.setName("Java Web");
-        model.setPrice(180);
-        model.setDiscount(0.3);
-        courses.add(model);
 
-    }
     @Override
     public List<CourseServiceModel> getAllCourses() {
-        return courses;
+
+        return entityManager.createQuery("SELECT c FROM courses c", Course.class)
+                .getResultList()
+                .stream()
+                .map(course -> {
+                    CourseServiceModel model = new CourseServiceModel();
+                    model.setName(course.getName());
+                    model.setId(course.getId());
+                    return model;
+                }).collect(Collectors.toList());
+
     }
 
     @Override
     public void createCourse(String name) {
-        CourseServiceModel course = new CourseServiceModel();
-        course.setName(name);
-        courses.add(course);
+      entityManager.getTransaction().begin();
+       Course course = new Course();
+       course.setName(name);
+       entityManager.persist(course);
+       entityManager.getTransaction().commit();
 
     }
 }
