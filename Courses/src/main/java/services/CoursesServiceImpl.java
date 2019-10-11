@@ -22,4 +22,12 @@ public class CoursesServiceImpl implements CoursesService {
     public List<CourseServiceModel> getAllCourses() {
         return courses;
     }
+
+    @Override
+    public void createCourse(String name) {
+        CourseServiceModel course = new CourseServiceModel();
+        course.setName(name);
+        courses.add(course);
+
+    }
 }

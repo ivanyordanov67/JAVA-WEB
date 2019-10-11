@@ -3,21 +3,21 @@ package servlets;
 import models.serviceModels.CourseServiceModel;
 import services.CoursesService;
 import services.CoursesServiceImpl;
+import services.HtmlService;
+import services.HtmlServiceImpl;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.function.Function;
 
 @WebServlet("/")
 public class CoursesServlet extends ViewHttpServlet {
 
-    private final Function<CourseServiceModel, String> courseItemFunc =
-            course -> String.format("<li>%s</li>", course.getName());
+
+
 
 //   final CoursesService coursesService;
 //
@@ -26,28 +26,33 @@ public class CoursesServlet extends ViewHttpServlet {
 //        this.coursesService = coursesService;
 //    }
 
-    CoursesService coursesService = new CoursesServiceImpl();
+
+    private CoursesService coursesService = new CoursesServiceImpl();
+    private HtmlService htmlService = new HtmlServiceImpl();
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<CourseServiceModel> courses = coursesService.getAllCourses();
-        String body = this.coursesToHtml(courses);
+        String body =
+                this.htmlService.createCourseForm()+
+                this.coursesToHtml(courses);
         this.setHtmlContentType(resp);
         resp.getWriter().println(body);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String courseName = req.getParameter("name");
+        coursesService.createCourse(courseName);
+        resp.sendRedirect("/courses");
+    }
+
     private String coursesToHtml(List<CourseServiceModel> courses) {
 
-        return this.getList(courses, courseItemFunc);
+        return this.htmlService.getCoursesList(courses);
     }
 
-    private <T> String getList(List<T> collection, Function<T, String> itemFunc) {
-        StringBuilder builder = new StringBuilder();
-        collection.forEach(item -> {
-            String html = itemFunc.apply(item);
-            builder.append(html);
-        });
-        return String.format("<ul>%s</ul>", builder.toString());
-    }
+
 }
