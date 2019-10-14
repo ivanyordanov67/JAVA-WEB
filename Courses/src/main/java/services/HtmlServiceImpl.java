@@ -15,13 +15,13 @@ public class HtmlServiceImpl implements HtmlService {
 
     @Override
     public String createCourseForm() {
-        return "<form method='post' action='/'>"+
-                "<label>"+
+        return "<form method='post' action='/courses'>"+
+        "<label>"+
                 "Name: "+"<input name='name' type='text'/>"+
                 "</label>"+
                 " "+
                 "<button>Create</button>"+
-               "</form>";
+                "</form>";
     }
 
     private String toCourseItem(CourseServiceModel course){

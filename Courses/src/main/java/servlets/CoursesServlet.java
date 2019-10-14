@@ -16,36 +16,33 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/")
+@WebServlet("/courses")
 public class CoursesServlet extends ViewHttpServlet {
 
+    final CoursesService coursesService;
+    final HtmlService htmlService;
 
-
-
-   final CoursesService coursesService;
-   final HtmlService htmlService;
-
-   @Inject
+    @Inject
     public CoursesServlet(CoursesService coursesService, HtmlService htmlService) {
         this.coursesService = coursesService;
-       this.htmlService = htmlService;
-   }
-
+        this.htmlService = htmlService;
+    }
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         List<CourseServiceModel> courses = coursesService.getAllCourses();
         String body =
-                this.htmlService.createCourseForm()+
-                this.coursesToHtml(courses);
+               this.htmlService.createCourseForm() +
+                        this.coursesToHtml(courses);
         this.setHtmlContentType(resp);
-        resp.getWriter().println(body);
+        req.setAttribute("courses", courses);
+        req.getRequestDispatcher("courses.jsp").forward(req, resp);
+       //resp.getWriter().println(body);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String courseName = req.getParameter("name");
         coursesService.createCourse(courseName);
         resp.sendRedirect("/courses");
