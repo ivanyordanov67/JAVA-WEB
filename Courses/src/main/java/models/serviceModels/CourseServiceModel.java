@@ -4,7 +4,7 @@ public class CourseServiceModel {
 
     private int id;
     private String name;
-    private int price;
+    private String price;
     private double discount;
 
     public int getId() {
@@ -23,11 +23,11 @@ public class CourseServiceModel {
         return name;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 

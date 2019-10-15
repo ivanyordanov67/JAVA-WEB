@@ -26,16 +26,19 @@ public class CoursesServiceImpl implements CoursesService {
                     CourseServiceModel model = new CourseServiceModel();
                     model.setName(course.getName());
                     model.setId(course.getId());
+                    model.setPrice(course.getPrice());
+
                     return model;
                 }).collect(Collectors.toList());
 
     }
 
     @Override
-    public void createCourse(String name) {
+    public void createCourse(String name, String price) {
       entityManager.getTransaction().begin();
        Course course = new Course();
        course.setName(name);
+       course.setPrice(price);
        entityManager.persist(course);
        entityManager.getTransaction().commit();
 

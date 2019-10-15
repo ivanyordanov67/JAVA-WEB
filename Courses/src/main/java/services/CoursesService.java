@@ -8,6 +8,6 @@ public interface CoursesService {
 
     List<CourseServiceModel> getAllCourses();
 
-    void createCourse(String courseName);
+    void createCourse(String courseName, String coursePrice);
 
 }
