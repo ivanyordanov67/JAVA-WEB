@@ -30,12 +30,7 @@ public class LoggingFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        /*
-        time
-        url
-        user IP
-        HTTP METHOD
-         */
+
 
         String time = dateService.getNowFormatted();
         String url = request.getRequestURL().toString();
