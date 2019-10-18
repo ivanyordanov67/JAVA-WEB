@@ -19,7 +19,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="cars_db" value="23154841-6b8f-4e06-800d-900284286cb7" />
+          <factory-entry name="Entities" />
         </datasource-mapping>
         <naming-strategy-map>
           <unit-entry name="cars_db" />
