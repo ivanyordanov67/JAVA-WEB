@@ -1,6 +1,7 @@
 package web;
 
 
+
 import models.services.UserService;
 
 import javax.inject.Inject;
@@ -16,10 +17,12 @@ public class UserRegisterServlet extends HttpServlet {
 
     private final UserService userService;
 
+
     @Inject
     public UserRegisterServlet(UserService userService) {
         this.userService = userService;
     }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,5 +40,5 @@ public class UserRegisterServlet extends HttpServlet {
 
         userService.register(username, email, password);
         resp.sendRedirect("/home");
-    }
+   }
 }
