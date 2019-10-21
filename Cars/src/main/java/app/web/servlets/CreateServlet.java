@@ -49,14 +49,26 @@ public class CreateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         CarCreateBindingModel bindingModel = new CarCreateBindingModel();
-        bindingModel.setBrand(req.getParameter("brand"));
-        bindingModel.setModel(req.getParameter("model"));
-        bindingModel.setYear(Integer.parseInt(req.getParameter("year")));
-        bindingModel.setEngine(req.getParameter("engine"));
 
-        this.carService.addCar(modelMapper.map(bindingModel, CarServiceModel.class));
+        if((req.getParameter("brand").isBlank())||
+        (req.getParameter("model").isBlank())||
+        (req.getParameter("engine").isBlank())||
+        req.getParameter("year").isBlank()){
+            resp.sendRedirect("/create");
+        }else {
+            bindingModel.setBrand(req.getParameter("brand"));
+            bindingModel.setModel(req.getParameter("model"));
+            bindingModel.setYear(Integer.parseInt(req.getParameter("year")));
+            bindingModel.setEngine(req.getParameter("engine"));
+
+            this.carService.addCar(modelMapper.map(bindingModel, CarServiceModel.class));
 
 
-        resp.sendRedirect("/all");
+
+
+            resp.sendRedirect("/all");
+        }
+
+
     }
 }

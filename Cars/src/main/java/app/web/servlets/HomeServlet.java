@@ -16,14 +16,14 @@ import java.io.*;
 public class HomeServlet extends HttpServlet {
 
 
-//     private  FileUtilTest fileUtil;
+    //     private  FileUtilTest fileUtil;
 //
 //    @Inject
 //    public HomeServlet(FileUtilTestImpl fileUtil) {
 //        this.fileUtil = fileUtil;
 //    }
-
-   FileUtilTest fileUtil = new FileUtilTestImpl();
+//
+    FileUtilTest fileUtil = new FileUtilTestImpl();
 
     private final static String FILE_PATH =
             "C:\\Users\\ivan\\Documents\\GitHub\\JAVA-WEB\\Cars\\src\\main\\webapp\\views\\home.html";
