@@ -13,7 +13,14 @@ public class UserLogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.getSession().setAttribute("username", null);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        try {
+            req.getSession().getAttribute("username").toString();
+            req.getSession().setAttribute("username", null);
+            req.getRequestDispatcher("index.jsp").forward(req, resp);
+        }catch (Exception e){
+
+            resp.sendRedirect("/users/login");
+        }
+
     }
 }

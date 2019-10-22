@@ -40,8 +40,10 @@ public class UserLoginServlet extends HttpServlet {
         if (user==null){
             resp.sendRedirect("/users/login");
         }else {
+
             req.getSession()
-                    .setAttribute("username", user.getUsername());
+                    .setAttribute("username", user.getUsername() );
+
             resp.sendRedirect("/home");
         }
 

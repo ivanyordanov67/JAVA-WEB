@@ -6,11 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(urlPatterns =
-        "/users/login," +
-        "/users/register," +
-                "/cars/all," +
-                "/cars/create")
+@WebFilter(urlPatterns = {"/cars/create", "/cars/all"})
 public class AuthFilter implements Filter {
 
     @Override
@@ -18,14 +14,15 @@ public class AuthFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        String username = request
-                .getSession()
-                .getAttribute("username").toString();
+       Object username = request
+               .getSession()
+               .getAttribute("username");
 
-        if(username==null){
-            response.sendRedirect("/users/login");
-        }
-        filterChain.doFilter(request,response);
+       if (username==null){
+           response.sendRedirect("/users/login");
+       }else {
+           filterChain.doFilter(request, response);
+       }
 
     }
 }
