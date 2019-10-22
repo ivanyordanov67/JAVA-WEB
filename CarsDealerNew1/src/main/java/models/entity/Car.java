@@ -9,7 +9,7 @@ public class Car extends BaseEntity {
     private String brand;
     private String model;
     private String year;
-    private Engines engine;
+    private Engine engine;
     private User user;
 
     @Column(nullable = false)
@@ -41,11 +41,11 @@ public class Car extends BaseEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    public Engines getEngine() {
+    public Engine getEngine() {
         return engine;
     }
 
-    public void setEngine(Engines engine) {
+    public void setEngine(Engine engine) {
         this.engine = engine;
     }
 

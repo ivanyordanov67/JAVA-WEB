@@ -66,4 +66,18 @@ public class UserServiceImpl implements UserService {
         }
         return modelMapper.map(user, UserServiceModel.class);
     }
+
+    @Override
+    public User getUserByName(String username){
+        List<User> users = entityManager.createQuery("select u from User u " +
+                "where u.username= :username ", User.class)
+                .setParameter("username", username)
+                .getResultList();
+        if (users.isEmpty()){
+            return null;
+        }
+        User user = users.get(0);
+
+        return user;
+    }
 }

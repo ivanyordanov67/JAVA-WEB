@@ -42,9 +42,10 @@ public class UserRegisterServlet extends HttpServlet {
 
         try {
             userService.register(username, email, password,confirmPassword);
+            resp.sendRedirect("/home");
         } catch (Exception e) {
             resp.sendRedirect("/users/register");
         }
-        resp.sendRedirect("/home");
+
    }
 }

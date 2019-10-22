@@ -27,7 +27,7 @@
 <body>
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-background">
-        <a class="nav-link text-white active h5" href="/index">Home</a>
+        <a class="nav-link text-white active h5" href="/home">Home</a>
         <div class="collapse navbar-collapse d-flex justify-content-end">
             <ul class="navbar-nav row">
                 <li class="nav-item col-md-4">

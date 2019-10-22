@@ -1,6 +1,6 @@
 package models.entity;
 
-public enum Engines {
+public enum Engine {
 
     Diesel,
     Gasoline
