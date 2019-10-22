@@ -42,7 +42,7 @@ public class CarsServiceImpl implements CarsService {
         car.setBrand(brand);
         car.setModel(model);
         car.setYear(years);
-        car.setEngine(Engine.Diesel);
+        car.setEngine(Engine.valueOf(engine));
         car.setUser(userService.getUserByName(username));
 
         entityManager.getTransaction().begin();

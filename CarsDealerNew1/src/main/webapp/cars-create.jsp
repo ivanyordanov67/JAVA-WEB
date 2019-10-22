@@ -81,8 +81,8 @@
                     <div class="label-holder d-flex justify-content-center">
                         <label class="text-center text-white font-weight-bold" for="engine">Engine
                             <select id="engine" name="engine" class="form-control">
-                                <option value="diesel">Diesel</option>
-                                <option value="gasoline">Gasoline</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Gasoline">Gasoline</option>
                             </select>
                         </label>
                     </div>

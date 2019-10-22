@@ -12,6 +12,8 @@ public class Car extends BaseEntity {
     private Engine engine;
     private User user;
 
+    
+
     @Column(nullable = false)
     public String getBrand() {
         return brand;
