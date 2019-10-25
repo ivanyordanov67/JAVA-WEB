@@ -1,4 +1,4 @@
-package app.domain.serviceModels.base;
+package app.repository.base;
 
 import app.domain.entities.Car;
 import app.repository.CarRepository;

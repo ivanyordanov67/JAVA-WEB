@@ -23,17 +23,12 @@ public class AllCarsBean {
     @Inject
     public AllCarsBean(CarService carService) {
         this.carService = carService;
-        this.cars = this.carService.allCars();
+       setCars(this.carService.allCars());
+
     }
 
-//    @PostConstruct
-//    private void init() {
-//        this.cars = new ArrayList<>();
-//    }
 
-    public List<CarServiceModel> allCars(){
-        return this.carService.allCars();
-    }
+
 
     public CarService getCarService() {
         return carService;
@@ -50,4 +45,7 @@ public class AllCarsBean {
     public void setCars(List<CarServiceModel> cars) {
         this.cars = cars;
     }
+//    public List<CarServiceModel> allCars(){
+//        return this.carService.allCars();
+//    }
 }
