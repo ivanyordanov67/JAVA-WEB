@@ -12,13 +12,11 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-background">
             <h:link styleClass="nav-link text-white active h5" value="Home" outcome="home"/>
-            <!--        <a class="nav-link text-white active h5" href="/home">Home</a>-->
             <div class="collapse navbar-collapse d-flex justify-content-end">
                 <ul class="navbar-nav row">
                     <li class="nav-item col-md-4">
                         <h:link styleClass="nav-link text-white active font-weight-bold" value="Upload Car"
                                 outcome="create"/>
-
                     </li>
                     <li class="nav-item col-md-4">
                         <h:link styleClass="nav-link text-white active font-weight-bold" value="All Cars"
@@ -27,7 +25,6 @@
                     <li class="nav-item col-md-4">
                         <h:link styleClass="nav-link text-white active font-weight-bold" value="Logout"
                                 outcome="logout"/>
-
                     </li>
                 </ul>
             </div>
@@ -42,9 +39,7 @@
                                 <h:inputText styleClass="form-control" placeholder="Brand"
                                              value="#{createBean.carServiceModel.brand}"/>
                             </h:outputLabel>
-                            <!--                        <label class="text-center text-white font-weight-bold" for="brand">Brand-->
-                            <!--                            <input type="text" class="form-control" name="brand" id="brand" placeholder="Brand"/>-->
-                            <!--                        </label>-->
+
                         </div>
                     </div>
                 </div>
@@ -55,9 +50,6 @@
                                 <h:inputText styleClass="form-control" placeholder="Model"
                                              value="#{createBean.carServiceModel.model}"/>
                             </h:outputLabel>
-                            <!--                        <label class="text-center text-white font-weight-bold" for="model">Model-->
-                            <!--                            <input type="text" class="form-control" name="model" id="model" placeholder="Model"/>-->
-                            <!--                        </label>-->
                         </div>
                     </div>
                 </div>
@@ -71,9 +63,6 @@
                                 <h:inputText type="number" styleClass="form-control" placeholder="Year"
                                              value="#{createBean.carServiceModel.year}"/>
                             </h:outputLabel>
-                            <!--                        <label class="text-center text-white font-weight-bold" for="year">Year-->
-                            <!--                            <input type="number" class="form-control" placeholder="Year" name="year" id="year"/>-->
-                            <!--                        </label>-->
                         </div>
                     </div>
                 </div>
@@ -86,12 +75,6 @@
                                     <f:selectItem itemValue="gasoline" itemLabel="Gasoline"/>
                                 </h:selectOneMenu>
                             </h:outputLabel>
-                            <!--                        <label class="text-center text-white font-weight-bold" for="engine">Engine-->
-                            <!--                            <select id="engine" name="engine" class="form-control">-->
-                            <!--                                <option value="diesel">Diesel</option>-->
-                            <!--                                <option value="gasoline">Gasoline</option>-->
-                            <!--                            </select>-->
-                            <!--                        </label>-->
                         </div>
                     </div>
                 </div>
@@ -104,7 +87,6 @@
                                          styleClass="btn btn-secondary"
                                          value="Upload Car"
                                          action="#{createBean.createCar}"/>
-                        <!--                    <input type="submit" class="btn btn-secondary" value="Upload Car"/>-->
                     </div>
                 </div>
             </div>
