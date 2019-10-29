@@ -15,7 +15,7 @@ public class ApplicationBeanConfiguration {
 
     @Produces
     public EntityManager entityManager(){
-        return Persistence.createEntityManagerFactory("jobs_db")
+        return Persistence.createEntityManagerFactory("SbojUnit")
                 .createEntityManager();
     }
 }

@@ -20,15 +20,16 @@ public class RegisterBean extends BaseBean {
     private UserService userService;
     private ModelMapper modelMapper;
 
-    public RegisterBean() {
 
-    }
 
     @Inject
     public RegisterBean(UserService userService, ModelMapper modelMapper) {
         this.userService = userService;
         this.modelMapper = modelMapper;
 
+    }
+
+    public RegisterBean() {
     }
 
     @PostConstruct

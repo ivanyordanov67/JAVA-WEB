@@ -1,5 +1,6 @@
 package web.beans;
 
+import domain.entities.User;
 import domain.models.binding.LoginBinding;
 import domain.models.services.UserServiceModel;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -17,7 +18,7 @@ import java.util.Map;
 @RequestScoped
 public class LoginBean extends BaseBean {
 
-    private LoginBinding user;
+    private User user;
     private UserService userService;
     private ModelMapper modelMapper;
 
@@ -32,7 +33,7 @@ public class LoginBean extends BaseBean {
 
     @PostConstruct
     public void init() {
-        this.user = new LoginBinding();
+        this.user = new User();
     }
 
     public void login() {
@@ -57,11 +58,11 @@ public class LoginBean extends BaseBean {
 
     }
 
-    public LoginBinding getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(LoginBinding user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }
