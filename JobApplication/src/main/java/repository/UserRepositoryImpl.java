@@ -21,4 +21,16 @@ public class UserRepositoryImpl implements UserRepository {
         this.entityManager.getTransaction().commit();
 
     }
+
+    @Override
+    public User findByUsernameAndPassword(String username, String password) {
+        this.entityManager.getTransaction().begin();
+        User user = this.entityManager.createQuery(
+                "select u from User u where u.username= :username and u.password= :password", User.class)
+                .setParameter("username", username)
+                .setParameter("password", password)
+                .getSingleResult();
+        this.entityManager.getTransaction().commit();
+        return user;
+    }
 }

@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="JobApplication-1.0-SNAPSHOT.war">
+    <root id="archive" name="JSFDemo-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="JobApplication:war exploded" />
     </root>
   </artifact>

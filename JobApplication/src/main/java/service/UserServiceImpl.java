@@ -19,7 +19,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void save(UserServiceModel user) {
+    public void save(domain.models.services.UserServiceModel user) {
         this.userRepository.save(this.modelMapper.map(user, User.class));
+    }
+
+    @Override
+    public UserServiceModel findByUsernameAndPassword(String username, String password) {
+
+        return this.modelMapper
+                .map(this.userRepository
+                        .findByUsernameAndPassword(username, password), UserServiceModel.class);
     }
 }
