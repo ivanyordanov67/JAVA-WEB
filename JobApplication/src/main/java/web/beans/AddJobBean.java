@@ -1,7 +1,7 @@
 package web.beans;
 
 import domain.entities.Sector;
-import domain.models.binding.JobAddBindingModel;
+import domain.models.binding.JobCreateBindingModel;
 import domain.models.services.JobServiceModel;
 import org.modelmapper.ModelMapper;
 import service.JobService;
@@ -15,7 +15,7 @@ import javax.inject.Named;
 @RequestScoped
 public class AddJobBean extends BaseBean {
 
-    private JobAddBindingModel job;
+    private JobCreateBindingModel job;
     private  JobService jobService;
     private  ModelMapper modelMapper;
 
@@ -31,7 +31,7 @@ public class AddJobBean extends BaseBean {
 
     @PostConstruct
     public void init(){
-        this.job = new JobAddBindingModel();
+        this.job = new JobCreateBindingModel();
     }
 
     public void createJob(){
@@ -50,11 +50,11 @@ public class AddJobBean extends BaseBean {
         this.redirect("/home");
     }
 
-    public JobAddBindingModel getJob() {
+    public JobCreateBindingModel getJob() {
         return job;
     }
 
-    public void setJob(JobAddBindingModel job) {
+    public void setJob(JobCreateBindingModel job) {
         this.job = job;
     }
 }

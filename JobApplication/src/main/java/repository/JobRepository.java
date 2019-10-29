@@ -2,7 +2,16 @@ package repository;
 
 import domain.entities.Job;
 
+import java.util.List;
+
 public interface JobRepository {
 
-    public void saveJob(Job job);
+     void saveJob(Job job);
+
+     List<Job> findAll();
+
+     Job findById(String id);
+
+     void delete(String id);
+
 }
