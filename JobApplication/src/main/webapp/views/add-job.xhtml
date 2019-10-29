@@ -15,30 +15,30 @@
                 <div class="label-holder d-flex justify-content-center">
                     <label for="sector" class="h3 mb-2">Sector</label>
                 </div>
-                <h:inputText type="text" class="form-control" id="sector" name="sector" value=""/>
+                <h:inputText type="text" class="form-control" id="sector" name="sector" value="#{addJobBean.job.sector}"/>
             </div>
             <div class="form-group">
                 <div class="label-holder d-flex justify-content-center">
                     <label for="profession" class="h3 mb-2">Profession</label>
                 </div>
-                <h:inputText type="text" class="form-control" id="profession" name="profession" value=""/>
+                <h:inputText type="text" class="form-control" id="profession" name="profession" value="#{addJobBean.job.profession}"/>
             </div>
             <div class="form-group">
                 <div class="label-holder d-flex justify-content-center">
                     <label for="salary" class="h3 mb-2">Salary</label>
                 </div>
-                <h:inputText type="number" class="form-control" id="salary" name="salary" value=""/>
+                <h:inputText type="number" class="form-control" id="salary" name="salary" value="#{addJobBean.job.salary}"/>
             </div>
             <div class="form-group">
                 <div class="label-holder d-flex justify-content-center">
                     <label for="description" class="h3 mb-2">Description</label>
                 </div>
-                <h:inputTextarea rows="4" class="form-control" id="description" name="description" value="">
+                <h:inputTextarea rows="4" class="form-control" id="description" name="description" value="#{addJobBean.job.description}">
 
                 </h:inputTextarea>
             </div>
             <div class="button-holder d-flex justify-content-center">
-                <h:commandButton value="Register" type="submit" class="btn btn-info text-white"/>
+                <h:commandButton value="Register" type="submit" class="btn btn-info text-white" action="#{addJobBean.createJob}"/>
             </div>
         </h:form>
         <hr class="my-3"/>
