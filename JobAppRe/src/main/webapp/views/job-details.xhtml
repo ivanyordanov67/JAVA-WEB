@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+<ui:include src="templates/head.xhtml"/>
+
+<h:body>
+<div class="container-fluid">
+    <ui:include src="templates/user-navbar.xhtml"/>
+
+    <main>
+        <hr class="my-3"/>
+        <div class="text-center mb-4">
+            <h1>Job Details</h1>
+        </div>
+        <hr class="my-3"/>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="label mt-2">
+                        <h2 class="text-center">Sector</h2>
+                        <h4 class="text-center">#{jobDetailsBean.getById(request.getParameter('id')).sector}</h4>
+                    </div>
+                    <div class="label mt-4">
+                        <h2 class="text-center">Profession</h2>
+                        <h4 class="text-center">#{jobDetailsBean.getById(request.getParameter('id')).profession}</h4>
+                    </div>
+                    <div class="label mt-4">
+                        <h2 class="text-center">Salary</h2>
+                        <h4 class="text-center">#{jobDetailsBean.getById(request.getParameter('id')).salary}</h4>
+                    </div>
+                    <div class="label mt-4">
+                        <h2 class="text-center">Description</h2>
+                        <p class="text-center">#{jobDetailsBean.getById(request.getParameter('id')).description}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-3"/>
+    </main>
+    <footer class="footer py-3">
+        <div class="container-fluid">
+            <div class="text-muted container-fluid text-center">&#169; CopyRight Sanity Web Design Studios 2019. All
+                rights reserved.
+            </div>
+        </div>
+    </footer>
+</div>
+</h:body>
+</html>

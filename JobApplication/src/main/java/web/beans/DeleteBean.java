@@ -14,6 +14,7 @@ public class DeleteBean extends BaseBean{
 
     private JobService jobService;
 
+
     public DeleteBean() {
     }
 
@@ -21,8 +22,6 @@ public class DeleteBean extends BaseBean{
     public DeleteBean(JobService jobService) {
         this.jobService = jobService;
     }
-
-
 
     public void delete(){
 

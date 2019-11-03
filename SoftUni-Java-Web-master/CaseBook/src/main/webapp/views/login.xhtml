@@ -16,16 +16,16 @@
                 <div class="label-holder d-flex justify-content-center">
                     <label for="username" class="h3 mb-2">Username</label>
                 </div>
-                <h:inputText type="text" class="form-control" id="username" name="username" value=""/>
+                <h:inputText type="text" class="form-control" id="username" name="username" value="#{loginBean.model.username}"/>
             </div>
             <div class="form-group">
                 <div class="label-holder d-flex justify-content-center">
                     <label for="password" class="h3 mb-2">Password</label>
                 </div>
-                <h:inputSecret type="password" class="form-control" id="password" name="password" value=""/>
+                <h:inputSecret type="password" class="form-control" id="password" name="password" value="#{loginBean.model.password}"/>
             </div>
             <div class="button-holder d-flex justify-content-center">
-                <h:commandButton value="Login" type="submit" class="btn btn-info text-white"/>
+                <h:commandButton value="Login" type="submit" class="btn btn-info text-white" action="#{loginBean.login}"/>
             </div>
         </h:form>
         <hr class="my-3"/>

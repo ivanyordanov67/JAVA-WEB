@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class BaseBean {
 
-    protected void redirect(String url)  {
+    public void redirect(String url)  {
         try {
             FacesContext.getCurrentInstance()
                     .getExternalContext()

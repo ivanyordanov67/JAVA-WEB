@@ -1,54 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html lang="en" xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 <ui:include src="templates/head.xhtml"/>
-
 <h:body>
-<div class="container-fluid">
     <ui:include src="templates/user-navbar.xhtml"/>
-
     <main>
         <hr class="my-2"/>
         <div class="text-center mt-3">
-            <h:link value="Welcome, $(username)" outcome="profile" class="h4 text-info"/>
+            <h:link outcome="profile?id=#{session.getAttribute('userId')}" class="h4 text-info"
+                    value="Welcome, #{session.getAttribute('username')}"/>
         </div>
         <hr class="my-4"/>
         <div class="container">
-            <div class="row mb-4 d-flex justify-content-around">
+            <ui:repeat value="#{homeBean.models}" var="model" varStatus="status">
+                <h:outputText value="&lt;div class=&quot;row mb-4 d-flex justify-content-around&quot;&gt;"
+                              escape="false" rendered="#{status.index % 4 == 0}"/>
                 <div class="col-md-2 d-flex flex-column text-center">
-                    <h:graphicImage library="png" name="male.png" class="img-thumbnail" width="200" height="200"/>
-                    <h5 class="text-center">Pesho</h5>
-                    <h:commandButton value="Add Friend"  class="btn btn-info"/>
+                    <h:graphicImage library="png" name="#{model.gender}.png" class="img-thumbnail" width="200"
+                                    height="200"/>
+                    <h5 class="text-center">#{model.username}</h5>
+                    <h:form>
+                        <h:commandLink action="#{homeBean.addFriend(model.id)}" class="btn btn-info"
+                                       value="Add Friend"/>
+                    </h:form>
                 </div>
-<!--                <div class="col-md-2 d-flex flex-column text-center">-->
-<!--                    <img src="png/female.png" class="img-thumbnail" width="200" height="200"/>-->
-<!--                    <h5 class="text-center">Tuhlichka</h5>-->
-<!--                    <a href="/friends/add?name=Tuhlichka" class="btn btn-info">Add Friend</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-2 d-flex flex-column text-center">-->
-<!--                    <img src="png/male.png" class="img-thumbnail" width="200" height="200"/>-->
-<!--                    <h5 class="text-center">Sasho</h5>-->
-<!--                    <a href="/friends/add?name=Sasho" class="btn btn-info">Add Friend</a>-->
-<!--                </div>-->
-<!--                <div class="col-md-2 d-flex flex-column text-center">-->
-<!--                    <img src="png/female.png" class="img-thumbnail" width="200" height="200"/>-->
-<!--                    <h5 class="text-center">Keremidka</h5>-->
-<!--                    <a href="/friends/add?name=Keremidka" class="btn btn-info">Add Friend</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row mb-4 d-flex justify-content-around">-->
-<!--                <div class="col-md-2 d-flex flex-column text-center">-->
-<!--                    <img src="png/male.png" class="img-thumbnail" width="200" height="200"/>-->
-<!--                    <h5 class="text-center">Toncho</h5>-->
-<!--                    <a href="/friends/add?name=Toncho" class="btn btn-info">Add Friend</a>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
+                <h:outputText value="&lt;/div&gt;" escape="false" rendered="#{status.index % 4 == 3}"/>
+            </ui:repeat>
         </div>
         <hr class="my-3"/>
     </main>
     <ui:include src="templates/footer.xhtml"/>
-
-</div>
 </h:body>
 </html>

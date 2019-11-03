@@ -13,6 +13,7 @@ public void logout(){
             .getCurrentInstance()
             .getExternalContext()
             .invalidateSession();
+
     this.redirect("/index");
 }
 
