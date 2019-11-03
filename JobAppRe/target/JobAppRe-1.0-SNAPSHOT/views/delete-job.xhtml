@@ -10,7 +10,7 @@
         <hr class="my-3"/>
         <h1 class="text-center">Delete Job</h1>
         <hr class="hr-3"/>
-        <form class="mx-auto w-15" method="post" action="/jobs/delete?id=1">
+        <h:form class="mx-auto w-15" method="post" action="/jobs/delete?id=1">
             <div class="form-group">
                 <div class="label-holder d-flex justify-content-center">
                     <label for="sector" class="h3 mb-2">Sector</label>
@@ -35,10 +35,12 @@
                 </div>
                 <h:inputTextarea rows="4" class="form-control" id="description" name="description" value="#{jobDetailsBean.getById(request.getParameter('id')).description}"/>
             </div>
+            <input type="hidden" value="#{deleteBean.getById(request.getParameter('id')).id}" name="id"/>
+
             <div class="button-holder d-flex justify-content-center">
-                <h:commandButton value="Delete Job" action="#{deleteBean.delete}" type="submit" class="btn btn-danger text-white"/>
+                <h:commandButton styleClass="btn btn-danger" value="Delete" action="#{deleteBean.delete}"/>
             </div>
-        </form>
+        </h:form>
         <hr class="my-3"/>
     </main>
     <ui:include src="templates/footer.xhtml"/>

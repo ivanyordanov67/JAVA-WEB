@@ -9,11 +9,14 @@ import javax.inject.Named;
 public class LogoutBean extends BaseBean {
 
     public void logout(){
-
         FacesContext.getCurrentInstance()
                 .getExternalContext()
                 .invalidateSession();
 
         this.redirect("/index");
+    }
+
+    public void test(){
+        System.out.println();
     }
 }

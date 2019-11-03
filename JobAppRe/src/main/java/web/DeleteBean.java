@@ -1,5 +1,6 @@
 package web;
 
+import domain.models.services.JobServiceModel;
 import service.JobService;
 
 import javax.enterprise.context.RequestScoped;
@@ -23,9 +24,15 @@ public class DeleteBean extends BaseBean{
     }
 
 
+    public JobServiceModel getById(String id){
+       return this.jobService.getById(id);
+    }
+
+
+
 
     public void delete(){
-        System.out.println();
+
         String id = ((HttpServletRequest)FacesContext
                 .getCurrentInstance()
                 .getExternalContext()
