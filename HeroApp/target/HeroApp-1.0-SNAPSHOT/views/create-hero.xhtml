@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+
+<h:body>
+    <ui:include src="templates/user-navbar.xhtml"/>
+
+    <main>
+        <h1 class="text-center mt-2">Create Hero</h1>
+        <hr class="hr-3"/>
+        <h:form class="mx-auto w-15">
+            <div class="form-group">
+                <div class="text-white label-holder d-flex justify-content-center">
+                    <label for="heroName" class="h4 mb-2">Hero Name</label>
+                </div>
+                <h:inputText value="#{addHeroBean.model.heroName}" type="text" class="form-control" id="heroName"
+                             name="heroName"/>
+            </div>
+            <div class="form-group">
+                <div class="text-white label-holder d-flex justify-content-center">
+                    <label for="clazz" class="h4 mb-2">Class</label>
+                </div>
+                <div>
+                <h:selectOneMenu value="#{addHeroBean.model.clazz}" id="clazz">
+                    <f:selectItem itemValue="" itemLabel=""/>
+                    <f:selectItem itemValue="warrior" itemLabel="Warrior"/>
+                    <f:selectItem itemValue="archer" itemLabel="Archer"/>
+                    <f:selectItem itemValue="mage" itemLabel="Mage"/>
+                </h:selectOneMenu>
+                </div>
+                <!--            <h:inputText value="#{addHeroBean.model.clazz}" type="number" class="form-control" id="clazz" name="clazz"/>-->
+            </div>
+            <!--        <div class="form-group">-->
+            <!--            <div class="text-white label-holder d-flex justify-content-center">-->
+            <!--            <label class="h4 mb-2">Hero Class</label>-->
+
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--        </div>-->
+            <!--                            <h:selectOneMenu value = "#{addHeroBean.model.clazz}" id="clazz">-->
+            <!--                                <f:selectItem itemValue = "warrior" itemLabel = "Warrior" />-->
+            <!--                                <f:selectItem itemValue = "archer" itemLabel = "Archer" />-->
+            <!--                                <f:selectItem itemValue = "mage" itemLabel = "Mage" />-->
+            <!--                            </h:selectOneMenu>-->
+
+            <!--        </div>-->
+            <div class="form-group">
+                <div class="text-white label-holder d-flex justify-content-center">
+                    <label for="level" class="h4 mb-2">Level</label>
+                </div>
+                <h:inputText value="#{addHeroBean.model.level}" type="number" class="form-control" id="level"
+                             name="level"/>
+            </div>
+            <div class="button-holder d-flex justify-content-center">
+                <h:commandButton value="Create Hero" action="#{addHeroBean.addHero}"
+                                 class="btn btn-info text-white mb-3" type="submit"/>
+
+            </div>
+        </h:form>
+    </main>
+    <ui:include src="templates/footer.xhtml"/>
+
+</h:body>
+</html>
