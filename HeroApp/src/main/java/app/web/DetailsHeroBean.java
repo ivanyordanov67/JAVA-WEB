@@ -12,7 +12,7 @@ import javax.inject.Named;
 @RequestScoped
 public class DetailsHeroBean extends BaseBean {
 
-    //private HomeViewModel model;
+    private HomeViewModel model;
     private HeroService heroService;
     private ModelMapper modelMapper;
 

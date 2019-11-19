@@ -43,7 +43,7 @@ public class LoginBean extends BaseBean {
 
         String hashPassword = this.userService.hashPassword(this.model.getPassword());
 
-        UserServiceModel user =this.userService.getByUsernameAndId(this.model.getUsername(),hashPassword);
+        UserServiceModel user =this.userService.getByUsernameAndPassword(this.model.getUsername(),hashPassword);
 
         if (user==null){
             this.redirect("register");

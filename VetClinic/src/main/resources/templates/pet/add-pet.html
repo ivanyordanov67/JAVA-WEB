@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="~{fragments/head}"/>
+
+<body id="page1">
+<!-- Header -->
+<header>
+    <div class="inner">
+        <h1 class="logo"><a href="/home">Pet clinic</a></h1>
+        <div class="fright">
+            <div class="header-meta">
+
+                <div class="col-elem"> Have a problem with your pet?<br>
+                    Call us now: <span class="phone"> 02/989 76 56 </span></div>
+            </div>
+            <nav>
+                <ul class="sf-menu">
+                    <li><a href="services.html">services</a> </li>
+                    <li><a href="links.html">add pet</a></li>
+                    <li><a href="contacts.html">profile</a></li>
+                    <li><a href="contacts.html">logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</header>
+<!-- Content -->
+<section id="content">
+    <h1>Welcome, <span th:text="${#httpSession.getAttribute('username')}"></span></h1>
+    <div class="text-center"><a href="">Set appointment</a></div>
+    <h1 >Add Pet</h1>
+    <hr class="hr-3"/>
+    <form class="mx-auto w-15" method="post">
+        <div class="form-group">
+            <div class="label-holder textCol d-flex justify-content-center">
+                <label for="petName" class="h4 mb-2">Pet name</label>
+            </div>
+            <input type="text" class="form-control" id="petName" name="petName"/>
+        </div>
+        <div class="form-group">
+            <div class="label-holder textCol d-flex justify-content-center">
+                <label for="animalType" class="h4 mb-2">Animal Type</label>
+            </div>
+            <input type="text" class="form-control" id="animalType" name="animalType"/>
+        </div>
+        <div class="form-group">
+            <div class="label-holder  textCol d-flex justify-content-center">
+                <label for="gender" class="h4 mb-2">Gender</label>
+            </div>
+            <input type="text" class="form-control" id="gender" name="gender"/>
+        </div>
+        <div class="form-group">
+            <div class="label-holder  textCol d-flex justify-content-center">
+                <label for="years" class="h4 mb-2">Years</label>
+            </div>
+            <input class="form-control" type="number" id="years" name="years"/>
+        </div>
+
+        <div class="button-holder d-flex justify-content-center">
+            <button class="btn btn-info  mb-3" type="submit">Add Pet</button>
+        </div>
+    </form>
+
+
+
+
+
+
+</section>
+<!-- Footer -->
+<footer>
+    <div class="copyright"> &#169; 2019 <strong class="footer-logo">Pet clinic</strong>
+        <div>Website Template by Ivan</div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

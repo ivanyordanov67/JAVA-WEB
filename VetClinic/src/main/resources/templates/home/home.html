@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="~{fragments/head}"/>
+
+<body id="page1">
+<!-- Header -->
+<header>
+    <div class="inner">
+        <h1 class="logo"><a href="/home">Pet clinic</a></h1>
+        <div class="fright">
+            <div class="header-meta">
+
+                <div class="col-elem"> Have a problem with your pet?<br>
+                    Call us now: <span class="phone"> 02/989 76 56 </span></div>
+            </div>
+            <nav>
+                <ul class="sf-menu">
+                    <li><a href="services.html">services</a> </li>
+                    <li><a href="/add">add pet</a></li>
+                    <li><a href="contacts.html">profile</a></li>
+                    <li><a href="contacts.html">logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</header>
+<!-- Content -->
+<section id="content">
+    <h1>Welcome, <span th:text="${#httpSession.getAttribute('username')}"></span></h1>
+    <div class="text-center"><a href="index.html">Set appointment</a></div>
+<!--    <button type="button" class="btn btn-primary">Set appointment</button>-->
+    <div class="row">
+        <div class="card col-3 flex-column text-center" style="width: 18rem;">
+            <img src="/images/dog.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">John Dow</h5>
+                <p class="card-text">Dakel</p>
+                <a href="#" class="btn btn-success">Details</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</section>
+<!-- Footer -->
+<footer>
+    <div class="copyright"> &#169; 2019 <strong class="footer-logo">Pet clinic</strong>
+        <div>Website Template by Ivan</div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

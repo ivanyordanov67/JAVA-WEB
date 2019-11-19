@@ -43,7 +43,7 @@ public class AddHeroBean extends BaseBean {
         HeroServiceModel serviceModel = this.modelMapper.map(model, HeroServiceModel.class);
 
         serviceModel.setClazz(Clazz.valueOf(model.getClazz().toLowerCase()));
-        System.out.println();
+
         this.heroService.addHero(serviceModel);
 
         this.redirect("/home");

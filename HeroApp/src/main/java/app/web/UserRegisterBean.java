@@ -33,7 +33,7 @@ public class UserRegisterBean extends BaseBean {
     }
 
     public void register(){
-        System.out.println();
+
 
         if(model.getUsername().equals("")||
                 model.getPassword().equals("")||
@@ -45,7 +45,7 @@ public class UserRegisterBean extends BaseBean {
         }
 
         if (!this.model.getPassword().equals(this.model.getConfirmPassword())){
-            this.redirect("/login");
+            this.redirect("/register");
         }
 
         String hashPassword = this.userService.hashPassword(model.getPassword());

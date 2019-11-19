@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+<ui:include src="templates/head.xhtml"/>
+
+<h:body>
+    <ui:include src="templates/user-navbar.xhtml"/>
+
+<main>
+    <h1 class="text-center mt-2">Delete Hero</h1>
+    <hr class="hr-3"/>
+    <h:form class="mx-auto w-15">
+        <div class="form-group">
+            <div class="label-holder d-flex justify-content-center text-white">
+                <label for="name" class="h3 mb-2">Name</label>
+            </div>
+            <h:outputText type="text" class="form-control" id="name" name="name" value="#{detailsHeroBean.getById(request.getParameter('id')).heroName}" disabled="true"/>
+        </div>
+        <div class="form-group">
+            <div class="label-holder d-flex justify-content-center text-white">
+                <label for="heroClass" class="h3 mb-2">Hero class</label>
+            </div>
+            <h:outputText type="text" class="form-control" id="heroClass" name="heroClass" value="#{detailsHeroBean.getById(request.getParameter('id')).clazz}" disabled="true"/>
+        </div>
+        <div class="form-group">
+            <div class="label-holder d-flex justify-content-center text-white">
+                <label for="level" class="h3 mb-2">Level</label>
+            </div>
+            <h:outputText type="number" class="form-control" id="level" name="#{detailsHeroBean.getById(request.getParameter('id')).level}" value="75" disabled="true"/>
+        </div>
+        <input type="hidden" value="#{deleteBean.getById(request.getParameter('id')).id}" name="id"/>
+        <div class="button-holder d-flex justify-content-center">
+            <h:commandButton class="btn btn-danger text-white mb-3" type="submit" value="Delete Hero" action="#{deleteBean.delete}"/>
+        </div>
+    </h:form>
+</main>
+    <ui:include src="templates/footer.xhtml"/>
+
+</h:body>
+</html>

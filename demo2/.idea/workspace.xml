@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7be58dd0-96ea-4fdb-8cd3-2f1023a57e80" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/java/com/softuni/demo1/Demo1Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/java/com/softuni/demo1/servises/BeersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/java/com/softuni/demo1/servises/implementation/BeersServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/java/com/softuni/demo1/web/controllers/BeersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/java/com/softuni/demo1/web/models/CreateBeerViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/resources/templates/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo1/src/test/java/com/softuni/demo1/Demo1ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HeroApp/src/main/java/app/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HeroApp/src/main/java/app/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HeroApp/src/main/java/app/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HeroApp/src/main/java/app/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HeroApp/src/main/java/app/web/LoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HeroApp/src/main/java/app/web/LoginBean.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TKNDcf5qXUpL1gwxUNTAMUNV4P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ivan\Documents\GitHub\JAVA-WEB\demo2\src\main\resources\templates" />
+      <recent name="C:\Users\ivan\Documents\GitHub\JAVA-WEB\demo2\src\main\resources\static" />
+      <recent name="C:\Users\ivan\Documents\GitHub\JAVA-WEB\demo2\src\main\java\com\softuni\demo2\servises" />
+      <recent name="C:\Users\ivan\Documents\GitHub\JAVA-WEB\demo2\src\main\java\com\softuni\demo2" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.softuni.demo2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ivan\Documents\GitHub\JAVA-WEB\demo2\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Demo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.softuni.demo2.Demo2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9d5db838" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7be58dd0-96ea-4fdb-8cd3-2f1023a57e80" name="Default Changelist" comment="" />
+      <created>1573204708280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573204708280</updated>
+      <workItem from="1573204713601" duration="27000" />
+      <workItem from="1573204816477" duration="1636000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/softuni/demo2/web/controllers/BeersController.java</url>
+          <line>14</line>
+          <properties field="beersService" class="com.softuni.demo2.web.controllers.BeersController" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

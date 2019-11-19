@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserServiceModel getByUsernameAndId(String username, String password) {
+    public UserServiceModel getByUsernameAndPassword(String username, String password) {
         return this.modelMapper.map(this.userRepository
                 .findByUsernameAndPassword(username, password), UserServiceModel.class);
     }
