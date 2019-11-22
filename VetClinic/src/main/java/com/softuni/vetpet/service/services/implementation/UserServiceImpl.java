@@ -37,6 +37,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean isExistUserByUsername(String username) {
+    User user = this.userRepository.findUserByUsername(username);
+        return user == null;
+    }
+
+    @Override
     public UserServiceModel getUserByUsername(String username) {
         return this.modelMapper.map(this.userRepository.findUserByUsername(username), UserServiceModel.class);
     }

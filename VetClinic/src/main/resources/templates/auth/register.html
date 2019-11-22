@@ -5,35 +5,13 @@
 
 <body>
 <!-- Header -->
-<header>
-    <div class="inner">
-        <h1 class="logo"><a href="/">Pet clinic</a></h1>
-        <div class="fright">
-            <div class="header-meta">
-
-                <div class="col-elem"> Have a problem with your pet?<br>
-                    Call us now: <span class="phone"> 02/989 76 56 </span></div>
-            </div>
-            <nav>
-                <ul class="sf-menu">
-
-                    <li><a href="about.html">about us</a></li>
-                    <li><a href="services.html">services</a> </li>
-                    <li><a href="/auth/register">register</a></li>
-                    <li><a href="/auth/login">login</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="clear"></div>
-    </div>
-
-</header>
+<th:block th:include="~{fragments/guest-navbar}"/>
 <!-- Content -->
 <body>
-<section id="content" >
-    <h1 >Register</h1>
+<section id="content">
+    <h1>Register</h1>
     <hr class="hr-3"/>
-    <form class="mx-auto w-15" method="post">
+    <form class="mx-auto w-15" th:action="@{/auth/register}" method="post">
         <div class="form-group">
             <div class="label-holder textCol d-flex justify-content-center">
                 <label for="username" class="h4 mb-2">Username</label>
@@ -66,19 +44,7 @@
 </section>
 </body>
 <!-- Footer -->
-<footer>
-    <div class="copyright"> &#169; 2019 <strong class="footer-logo">Pet clinic</strong>
-        <div>Website Template by Ivan</div>
-    </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+<th:block th:include="~{fragments/footer}"/>
+
 </body>
 </html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{fragments/head}"/>
+
+<body>
+<!-- Header -->
+<div th:if="${#httpSession.getAttribute('username')==null}">
+    Но усер
+<!--    <th:block th:include="~{fragments/guest-navbar}"/>-->
+</div>
+<!-- ELSE -->
+<div th:unless="${#httpSession.getAttribute('username')!=null}">
+<!--    <th:block th:include="~{fragments/user-navbar}"/>-->
+</div>
+
+
+<!-- Content -->
+<section id="content">
+    <div class="container_24">
+        <div class="indent-bot-2 boxes-bg">
+
+            <div class="clear"></div>
+            <div class="a1">
+                <h2>Our services:</h2>
+            </div>
+            <div class="wrapper">
+                <div class="grid_8">
+                    <div class="pad-right">
+                        <div class="wrapper"> <img src="images/page3-img1.png" alt="" class="img-indent-1">
+                            <div class="extra-wrap">
+                                <p class="p2"> <strong class="str-1"> immunization &amp; welness care </strong> </p>
+                                <p class="p0"> <strong> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec. </strong> </p>
+                            </div>
+                        </div>
+                        <p class="p1"> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec ique. Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus. </p>
+                        <div class="alignright p3"> <a href="#" class="link">read more</a> </div>
+                    </div>
+                </div>
+                <div class="grid_8">
+                    <div class="pad-right">
+                        <div class="wrapper"> <img src="images/page3-img2.png" alt="" class="img-indent-1">
+                            <div class="extra-wrap">
+                                <p class="p2"> <strong class="str-1"> radiology </strong> </p>
+                                <p class="p0"> <strong> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec tristique. </strong> </p>
+                            </div>
+                        </div>
+                        <p class="p1"> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec ique. Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus. </p>
+                        <div class="alignright p3"> <a href="#" class="link">read more</a> </div>
+                    </div>
+                </div>
+                <div class="grid_8">
+                    <div class="pad-right">
+                        <div class="wrapper"> <img src="images/page3-img3.png" alt="" class="img-indent-1">
+                            <div class="extra-wrap">
+                                <p class="p2"> <strong class="str-1"> dental care </strong> </p>
+                                <p class="p0"> <strong> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec tristique. </strong> </p>
+                            </div>
+                        </div>
+                        <p class="p1"> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec ique. Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus. </p>
+                        <div class="alignright p3"> <a href="#" class="link">read more</a> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-border-2"></div>
+            <div class="wrapper">
+                <div class="grid_8">
+                    <div class="pad-right">
+                        <div class="wrapper"> <img src="images/page3-img4.png" alt="" class="img-indent-1">
+                            <div class="extra-wrap">
+                                <p class="p2"> <strong class="str-1"> ultrasound </strong> </p>
+                                <p class="p0"> <strong> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec tristique. </strong> </p>
+                            </div>
+                        </div>
+                        <p class="p1"> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec ique. Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus. </p>
+                        <div class="alignright p3"> <a href="#" class="link">read more</a> </div>
+                    </div>
+                </div>
+                <div class="grid_8">
+                    <div class="pad-right">
+                        <div class="wrapper"> <img src="images/page3-img5.png" alt="" class="img-indent-1">
+                            <div class="extra-wrap">
+                                <p class="p2"> <strong class="str-1"> surgery </strong> </p>
+                                <p class="p0"> <strong> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec tristique. </strong> </p>
+                            </div>
+                        </div>
+                        <p class="p1"> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec ique. Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus. </p>
+                        <div class="alignright p3"> <a href="#" class="link">read more</a> </div>
+                    </div>
+                </div>
+                <div class="grid_8">
+                    <div class="pad-right">
+                        <div class="wrapper"> <img src="images/page3-img6.png" alt="" class="img-indent-1">
+                            <div class="extra-wrap">
+                                <p class="p2"> <strong class="str-1"> pharmacy </strong> </p>
+                                <p class="p0"> <strong> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec tristique. </strong> </p>
+                            </div>
+                        </div>
+                        <p class="p1"> Vivamus hendrerit mauris ut dui gravida ut viverra lectus tincidunt. Cras mattis tempor eros nec ique. Sed sed felis arcu, vel vehicula augue. Maecenas faucibus sagittis cursus. Fusce tincidunt, tellus. </p>
+                        <div class="alignright p3"> <a href="#" class="link">read more</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="copyright"> &copy; 2012 <strong class="footer-logo">Pet clinic</strong>
+        <div>Website Template by <a target="_blank" href="http://www.templatemonster.com/">TemplateMonster.com</a></div>
+    </div>
+    <ul class="social-list">
+        <li><a href="#"><img src="images/social-link-1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/social-link-2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/social-link-3.jpg" alt=""></a></li>
+        <li><a href="#"><img src="images/social-link-4.jpg" alt=""></a></li>
+    </ul>
+</footer>
+</body>
+</html>

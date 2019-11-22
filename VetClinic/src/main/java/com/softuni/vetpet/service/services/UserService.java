@@ -9,6 +9,7 @@ public interface UserService {
     void registerUser(UserServiceModel user);
     //UserServiceModel getUserByUsernameAndPassword(UserServiceModel userServiceModel);
     boolean existUser(LoginServiceModel model);
+    boolean isExistUserByUsername(String username);
     UserServiceModel getUserByUsername(String username);
 
 

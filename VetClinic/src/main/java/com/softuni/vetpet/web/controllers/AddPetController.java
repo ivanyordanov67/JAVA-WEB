@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,8 +39,6 @@ public class AddPetController {
     @PostMapping("/add")
     public ModelAndView addPet(@ModelAttribute PetServiceModel model, HttpSession session) {
 
-
-
         String username = session.getAttribute("username").toString();
         User owner = this.modelMapper.map(this.userService.getUserByUsername(username), User.class);
         //Pet pet = this.modelMapper.map(model, Pet.class);
@@ -52,7 +51,7 @@ public class AddPetController {
         //this.petService.update(pet);
 
 
-        return new ModelAndView("/home/home.html");
+        return new ModelAndView("redirect:/profile");
 
     }
 }

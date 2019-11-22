@@ -14,10 +14,10 @@ public class User extends BaseEntity {
     private String password;
     private String email;
     private Role role;
-    //private List<Pet> pets;
+    private List<Pet> pets;
 
     public User() {
-        //this.pets = new ArrayList<>();
+        this.pets = new ArrayList<>();
     }
 
     @Column(name = "username", nullable = false, unique = true)
@@ -48,15 +48,15 @@ public class User extends BaseEntity {
         this.role = role;
     }
 
-//    @OneToMany(targetEntity = Pet.class, mappedBy = "owner")
-//   // @JoinColumn(name = "owner_id", referencedColumnName = "id", updatable = true)
-//    public List<Pet> getPets() {
-//        return pets;
-//    }
-//
-//    public void setPets(List<com.softuni.vetpet.data.models.Pet> pets) {
-//        this.pets = pets;
-//    }
+    @OneToMany(targetEntity = Pet.class, mappedBy = "owner")
+   // @JoinColumn(name = "owner_id", referencedColumnName = "id", updatable = true)
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<com.softuni.vetpet.data.models.Pet> pets) {
+        this.pets = pets;
+    }
 
     @Column(name = "password", nullable = false)
     public String getPassword() {

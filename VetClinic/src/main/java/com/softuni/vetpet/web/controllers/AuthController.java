@@ -1,11 +1,11 @@
 package com.softuni.vetpet.web.controllers;
 
 import com.softuni.vetpet.data.models.Role;
-import com.softuni.vetpet.data.models.User;
 import com.softuni.vetpet.service.models.LoginServiceModel;
 import com.softuni.vetpet.service.models.UserServiceModel;
 import com.softuni.vetpet.service.services.HashPasswordService;
 import com.softuni.vetpet.service.services.UserService;
+import com.softuni.vetpet.service.services.ValidationService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,12 +24,14 @@ public class AuthController {
     private final UserService userService;
     private final HashPasswordService hashService;
     private final ModelMapper modelMapper;
+    private final ValidationService validationService;
 
     @Autowired
-    public AuthController(UserService userService, HashPasswordService hashService, ModelMapper modelMapper) {
+    public AuthController(UserService userService, HashPasswordService hashService, ModelMapper modelMapper, ValidationService validationService) {
         this.userService = userService;
         this.hashService = hashService;
         this.modelMapper = modelMapper;
+        this.validationService = validationService;
     }
 
     @GetMapping("/register")
@@ -41,7 +43,7 @@ public class AuthController {
     @PostMapping("/register")
     public ModelAndView registerConfirm(@ModelAttribute UserServiceModel model){
 
-        if (!model.getPassword().equals(model.getConfirmPassword())){
+        if (!this.validationService.isValid(model.getPassword(), model.getConfirmPassword())){
             return new ModelAndView("redirect:/auth/register");
         }else {
             model.setRole(Role.valueOf("admin"));
@@ -58,17 +60,17 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ModelAndView loginConfirm(@ModelAttribute LoginServiceModel model, HttpSession session){
+    public String loginConfirm(@ModelAttribute LoginServiceModel model, HttpSession session){
 
         if (!userService.existUser(model)){
-            return new ModelAndView("redirect:/auth/login");
+            return("redirect:/auth/login");
         }
-        ModelAndView modelAndView = new ModelAndView("/home/home");
 
         session.setAttribute("username", model.getUsername());
 
 
-        return modelAndView;
+
+        return("redirect:/home");
 }
 
 

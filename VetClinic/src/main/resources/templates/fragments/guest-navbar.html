@@ -1,0 +1,27 @@
+<th:block th:fragnemt >
+    <header>
+        <div class="inner">
+            <h1 class="logo"><a href="/">Pet clinic</a></h1>
+            <div class="fright">
+                <div class="header-meta">
+
+                    <div class="col-elem"> Have a problem with your pet?<br>
+                        Call us now: <span class="phone"> 02/989 76 56 </span></div>
+                    </br>
+                    <span>or <a href="set-appointment" style="color: #007bff">SET APPOINTMENT</a></span>
+                </div>
+                <nav>
+                    <ul class="sf-menu">
+
+                        <li><a href="/about">about us</a></li>
+                        <li><a href="/services">services</a></li>
+                        <li><a th:href="@{/auth/register}">register</a></li>
+                        <li><a th:href="@{/auth/login}">login</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </header>
+</th:block>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="~{fragments/head}"/>
+
+<body id="page1">
+<!-- Header -->
+<th:block th:include="~{fragments/user-navbar}"/>
+
+<!-- Content -->
+<section id="content">
+    <h1>Welcome, <span th:text="${#httpSession.getAttribute('username')}"></span></h1>
+    <div class="text-center"><a href="index.html">Set appointment</a></div>
+
+    <!--        <button type="button" class="btn btn-primary">Set appointment</button>-->
+    <div class="row mb-4 d-flex justify-content-around ">
+        <th:block th:each="pet : ${pets}">
+            <div class="card col-3 flex-column text-center" style="width: 18rem;">
+                <img th:src="@{'images/'+${pet.animalType}+'.jpg'}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><span th:text="${pet.petName}"></span></h5>
+                    <p class="card-text"><span th:text="${pet.animalType}"></span></p>
+                    <form method="post" action="/delete">
+                        <a href="/delete" class="btn btn-danger">Delete</a>
+                    </form>
+                </div>
+            </div>
+        </th:block>
+    </div>
+</section>
+<!-- Footer -->
+<th:block th:include="~{fragments/footer}"/>
+
+</body>
+</html>
